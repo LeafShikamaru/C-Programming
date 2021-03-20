@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a;
+    int sum=0;
+
+     for(a=1; a<=99; a+=2){
+        printf("%d\n", a);
+        sum += a;
+}
+printf("Sum is: %d\n", sum);
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    float division;
+    int multiplication;
+    int summation;
+    int difference;
+    int A;
+    int B;
+
+    printf("\nPlease enter first integer(A)[up to 3 integers]: ");
+    scanf("%d", &A);
+
+    printf("Please enter second integer(B)[up to 3 integers]: ");
+    scanf("%d", &B);
+
+    if (A<1000 && B<1000) {
+        multiplication = A * B;
+        division = A / B;
+        summation = A + B;
+        difference = A - B;
+
+        printf("Sum  =  %d\n", summation);
+        printf("Dif  =  %d\n", difference);
+        printf("Mul  =  %d\n", multiplication);
+        printf("Div  =  %.2f\n", division);
+    }
+
+    else{
+        printf("Error");
+    }
+    return 0;
+}

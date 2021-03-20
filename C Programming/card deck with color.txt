@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+struct bitCard {
+    unsigned face : 4;
+    unsigned suit : 2;
+    unsigned color : 1;
+};
+
+typedef struct bitCard Card;
+
+void fillDeck(Card *wDeck);
+void shuffle(Card *wDeck);
+void deal(Card *wDeck2);
+
+int main(void)
+{
+    Card deck[52];
+
+    srand(time(NULL));
+
+    fillDeck(deck);
+    shuffle(deck);
+    deal(deck);
+return 0;
+}
+
+void fillDeck(Card *wDeck)
+{
+    int i;
+
+    for (i = 0; i <= 51; i++) {
+        wDeck[i].face = i % 13;
+        wDeck[i].suit = i / 13;
+        wDeck[i].color = i / 26;
+    }
+}
+
+void shuffle(Card *wDeck)
+{
+    int i;
+    int j;
+    Card temp;
+
+    for (i = 0; i <= 51; i++) {
+        j = rand() % 52;
+        if (i != j) {
+            temp = wDeck[i];
+            wDeck[i] = wDeck[j];
+            wDeck[j] = temp;
+        }
+    }
+}
+
+void deal(Card *wDeck2)
+{
+    char *face[] = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
+                    "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+    char *suit[] = { "Hearts", "Diamonds", "Clubs", "Spades"};
+    char *color[] = { "Red", "Black"};
+
+    int i;
+
+    for (i = 0; i <= 51; i++) {
+        printf("%5s: %5s of %-8s", color[ wDeck2[i].color],
+        face[wDeck2[i].face], suit[wDeck2[i].suit]);
+        putchar((i + 1) % 2 ? '\t' : '\n');
+    }
+}

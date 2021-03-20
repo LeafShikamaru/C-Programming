@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+void displayBits(unsigned value);
+
+int main(void)
+{
+    unsigned val;
+
+    printf("Enter an integer: ");
+    scanf("%u", &val);
+
+    printf("%u before right shifting 4 bits is:\n", val);
+    displayBits(val);
+
+    printf("%u after right shifting 4 bits is:\n", val);
+    displayBits(val >> 4);
+return 0;
+}
+
+void displayBits(unsigned value)
+{
+    unsigned c;
+    unsigned displayMask = 1 << 15;
+
+    printf("%7u = ", value);
+
+    for ( c = 1; c <= 16; c++ ) {
+        value & displayMask ? putchar( '1' ) : putchar( '0' );
+        value <<= 1;
+        if (c % 8 == 0) {
+            putchar(' ');
+        }
+    }
+putchar('\n');
+}

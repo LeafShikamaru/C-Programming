@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(void)
+{
+    float D1;
+    float D2;
+    float D3;
+    float height;
+    float areaTriangle;
+    float areaSquare;
+    float areatotal;
+
+    printf("Enter the value of top side one:\n");
+    scanf("%f", &D1);
+
+    printf("Enter the value of base:\n");
+    scanf("%f", &D2);
+
+    printf("Enter the value of left side:\n");
+    scanf("%f", &D3);
+
+    height = pow(D1,2)+pow(D2,2);
+    areaTriangle = ((D1+height)/2);
+    areaSquare = (D2*D3);
+    areatotal = (areaTriangle + areaSquare);
+
+    printf("The area of this geometric shape is = %.2f\n", areatotal);
+}

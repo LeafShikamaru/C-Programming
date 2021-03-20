@@ -1,0 +1,62 @@
+#include <stdio.h>
+int main(void)
+{
+void A(double number1, double pi);
+void B(double number1, double pi);
+void C(double number1, double pi);
+
+int choice=1;
+double radius=0;
+double pi=3.14;
+
+while (choice >= 1 && choice <= 3)
+{
+printf("Input 1 to calculate the circumference of a circle \n");
+printf("Input 2 to calculate the area of a circle \n");
+printf("Input 3 to calculate the volume of a sphere \n");
+printf("Press 4 to exit.\n");
+printf("Enter your choice\n");
+scanf("%d",&choice);
+
+if(choice == 4)
+return(0);
+
+printf("Enter the radius: ");
+scanf("%lf", &radius);
+
+void(*func[3])(double, double)={&A, &B, &C};
+(*func[choice-1])(radius, pi);
+return(0);
+}
+}
+void A(double number1, double pi)
+{
+double answer;
+answer=2*number1*pi;
+printf("Calculation for circumference of a circle was performed.\n");
+printf("The radius inputted was: %lf\n", number1);
+printf("The circumference of the circle is: %lf\n", answer);
+return;
+}
+
+void B(double number1, double pi)
+{
+double answer;
+answer=pi*pow(number1,2);
+printf("Calculation for area of a circle was performed.\n");
+printf("The radius inputted was: %lf\n", number1);
+printf("The area of the circle is: %lf\n", answer);
+return;
+}
+
+
+void C(double number1, double pi)
+
+{
+double answer;
+answer=(4*pi*pow(number1,3)/3);
+printf("Calculation for volume of a sphere was performed.\n");
+printf("The radius inputted was: %lf\n", number1);
+printf("The volume of the sphere is: %lf\n", answer);
+return;
+}

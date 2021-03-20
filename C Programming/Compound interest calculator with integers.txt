@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    unsigned int year;
+    unsigned int amount;
+    unsigned int dollars;
+    unsigned int cents;
+    unsigned int principal = 100000;
+
+double rate = .05;
+
+printf("%s%21s\n", "year", "Amount on deposit");
+
+for(year = 1; year <= 10; ++year) {
+amount = principal * pow(1.0 + rate, year);
+cents = amount % 100; // takes cents the last two digits
+dollars = amount / 100; // emilinates decimals
+
+printf("%4u%18u", year, dollars); // display year followed by a period
+
+if (cents < 10) {
+printf("0%u\n", cents); // puts a zero and a cent
+} // end if
+else {
+printf("%u\n", cents); // if not put cents
+} // end else
+} // end for
+} // end main

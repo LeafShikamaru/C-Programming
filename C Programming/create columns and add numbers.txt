@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a;
+    int b;
+    int sum=0;
+    int sum1=0;
+    int sum2=0;
+
+     for(a=1; a<=49; a+=2){
+            b=a+50;
+            printf("%d\t%d\n",a,b);
+     }
+     for(b=1; b<=99; b+=2){
+            sum+=b;
+     }
+printf("Sum is: %d\n", sum);
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int fah;
+    double cel;
+
+    printf("%10s%12s\n", "Fahrenheit", "Celcius");
+
+    for (fah = 0; fah <= 212; fah++) {
+        cel = 5.0 / 9.0 * (fah - 32);
+        printf("%10d%+12.3f\n", fah, cel);
+    }
+return 0;
+}

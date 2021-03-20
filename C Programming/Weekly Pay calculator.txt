@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main (void)
+{
+    int pieces;
+    int code;
+    float pay;
+    float sales;
+    float hours;
+    float total = 0;
+
+    printf("\nEnter employee's paycode (-1 to end): ");
+    scanf("%d", &code);
+
+    while (code != -1) {
+        switch (code) {
+            case 1: // manager
+                printf("\nEnter manager's pay rate: ");
+                scanf("%f", &pay);
+                    printf("Weekly pay is: %.2f\n\n", pay);
+                        total += pay;
+                        break;
+
+            case 2: // hourly worker
+                printf("\nEnterly hourly worker's pay rate: ");
+                scanf("%f", &pay);
+                    printf("Enter the number of hours worked: ");
+                    scanf("%f", &hours);
+                        if (hours > 40)
+                        pay = (pay * 40) + ((hours - 40) * (pay * 1.5));
+                        else
+                        pay *= hours;
+                            printf("Weekly pay is: %.2f\n\n", pay);
+                            total += pay;
+                            break;
+
+            case 3: // commision workers
+                printf("\nEnter commission employee's weekly sales: ");
+                scanf("%f", &sales);
+                    pay = 250 + (.057* sales);
+                        printf("Weekly pay is: %.2f\n\n", pay);
+                        total += pay;
+                        break;
+
+            case 4: // pieceworker
+                printf("\nEnter number of items produced: ");
+                scanf("%d", &pieces);
+                    printf("Enter number per item pay rate: ");
+                    scanf("%f", &pay);
+                        pay = pieces * pay;
+                            printf("Weekly pay is: %.2f\n\n", pay);
+                            total += pay;
+                            break;
+
+    default: // for invalid paycode
+        printf("Invalid Code Entered.\n");
+        }
+printf("\nEnter employee's paycode (-1 to end): ");
+scanf("%d", &code);
+    }
+    printf("\nThe total payroll for the week is: %.2f\n", total);
+}

@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(void)
+{
+    float fah1;
+    float fah2;
+    float fah3;
+    float fah4;
+    float fah5;
+    float fah;
+    float cel1;
+    float cel2;
+    float cel3;
+    float cel4;
+    float cel5;
+    float cel;
+    char choice[2];
+
+    printf("\nFC: Convert temperature from Fahrenheit to Celsius.");
+    printf("\nCF: Convert temperature from Celsius to Fahrenheit.");
+    printf("\nEnter your choice (FC, CF): ");
+    scanf("%s",choice);
+
+    if(strcmp(choice, "FC") == 0)
+        {
+        printf("\nEnter five temperatures in Fahrenheit: ");
+        scanf("%f %f %f %f %f",&fah1, &fah2, &fah3, &fah4, &fah5);
+        cel1= (fah1 - 32) / 1.8;
+        cel2= (fah2 - 32) / 1.8;
+        cel3= (fah3 - 32) / 1.8;
+        cel4= (fah4 - 32) / 1.8;
+        cel5= (fah5 - 32) / 1.8;
+        printf("Temperature in Celsius: %.3f %.3f %.3f %.3f %.3f", cel1, cel2, cel3, cel4, cel5);
+        printf("\n\nFahrenheit\tCelsius\n");
+        printf("%3f\t%3f\n", fah1, cel1);
+        printf("%3f\t%3f\n", fah2, cel2);
+        printf("%3f\t%3f\n", fah3, cel3);
+        printf("%3f\t%3f\n", fah4, cel4);
+        printf("%3f\t%3f\n", fah5, cel5);
+    }
+
+    else if(strcmp(choice, "CF") == 0)
+        {
+        printf("\nEnter five temperatures in Celsius: ");
+        scanf("%f %f %f %f %f",&cel1, &cel2, &cel3, &cel4, &cel5);
+        fah1= (cel1*1.8)+32;
+        fah2= (cel2*1.8)+32;
+        fah3= (cel3*1.8)+32;
+        fah4= (cel4*1.8)+32;
+        fah5= (cel5*1.8)+32;
+        printf("Temperature in Fahrenheit: %.2f %.2f %.2f %.2f %.2f", fah1, fah2, fah3, fah4, fah5);
+        printf("\n\nCelsius\t\tFahrenheit\n");
+        printf("%3f\t%3f\n", cel1, fah1);
+        printf("%3f\t%3f\n", cel2, fah2);
+        printf("%3f\t%3f\n", cel3, fah3);
+        printf("%3f\t%3f\n", cel4, fah4);
+        printf("%3f\t%3f\n", cel5, fah5);
+    }
+    return 0;
+}

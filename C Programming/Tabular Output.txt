@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// function main begins proigram
+int main(void)
+{
+    int n = 1;
+    int ten = 10;
+    int hundred = 100;
+    int a;
+    int b;
+    int c;
+
+printf("N\t10*N\t100*N\t1000*N\n"); // assign table headers
+
+// start loop to 10
+while (n<=10){
+    printf("%d\t", n); // multiply necessary numbers and print to table
+    a = n * ten;
+    printf("%d\t", a);
+    b = n * hundred;
+    printf("%d\t", b);
+    c = n * 1000;
+    printf("%d\n",c);
+    n++;
+}
+}
